@@ -1,0 +1,15 @@
+<form novalidate class="form-horizontal" name="testForm">
+  <div class="row">
+  <div class="col-sm-6"><label>Select Form</label></div>
+  <div class="col-sm-6"><select ng-model="selectedForm" ng-change="changeForm(selectedForm)">
+    <option>-select-</option>
+    <option value="{{schema}}" ng-repeat="schema in schemaList">{{schema}}</option>
+  </select></div>
+
+</div>
+
+  <div fg-form
+       fg-form-data="getForm.$data"
+       fg-schema="getForm.schema">
+  </div>
+</form>

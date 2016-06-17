@@ -1,0 +1,30 @@
+<form novalidate class="form-horizontal" name="previewForm" ng-init="myForm.$data = {}">
+<pre>{{myForm.$data|json}}</pre>
+
+  <fieldset>
+    <legend>
+      <div class="row">
+        <div class="col-sm-4"><label>Form Name</label></div>
+        <div class="col-sm-4"><input type="text" ng-model="preview.formName" required> </div>
+
+
+      </div>
+    </legend>
+
+    <!-- Magic starts here -->
+    <div fg-form
+         fg-form-data="myForm.$data"
+         fg-schema="myForm.schema">
+
+    </div>
+    <div class="row">
+    <div class="subButton">
+      <button class="btn btn-default" ng-disabled="previewForm.$invalid" ng-click="save(preview.formName)" type="submit">save</button>
+      <button class="btn btn-default" type="reset">cancel</button>
+    </div>
+    </div>
+    <!-- Magic ends here -->
+
+  </fieldset>
+
+</form>
